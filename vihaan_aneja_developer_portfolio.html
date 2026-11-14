@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vihaan Aneja — Developer Portfolio</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <meta
+    name="description"
+    content="Portfolio of Vihaan Aneja (@vihaancraftz) — 15-year-old Cambridge IGCSE Computer Science student crafting software with Python, C, HTML/CSS, and Linux (Fedora & Ubuntu)."
+  />
+  <meta
+    name="keywords"
+    content="Vihaan Aneja, vihaancraftz, developer portfolio, IGCSE Computer Science, Python, C programming, Linux, Fedora, Ubuntu, software developer"
+  />
+  <meta name="author" content="Vihaan Aneja" />
+  <meta name="theme-color" content="#09090b" />
+
+  <!-- Open Graph / Social Sharing Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vihaan Aneja — Developer Portfolio" />
+  <meta
+    property="og:description"
+    content="15-year-old Cambridge IGCSE Computer Science student building clean software, exploring low-level programming, and refining Linux workflows."
+  />
+  <meta property="og:site_name" content="Vihaan Aneja" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vihaan Aneja — Developer Portfolio" />
+  <meta
+    name="twitter:description"
+    content="Crafting software with Python, C, HTML/CSS, and Linux (Fedora & Ubuntu)."
+  />
+
+  <!-- Custom Monochrome 'VA' Monogram SVG Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090b'/%3E%3Crect x='2' y='2' width='60' height='60' rx='12' fill='none' stroke='%2327272a' stroke-width='2'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23fafafa' font-family='monospace' font-weight='700' font-size='26' letter-spacing='-1'%3EVA%3C/text%3E%3C/svg%3E"
+  />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            void: '#09090b',
+            surface: '#111113',
+            paper: '#fafafa',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Subtle radial dot-grid background for architectural minimalism */
+    .bg-dot-matrix {
+      background-size: 24px 24px;
+      background-image: radial-gradient(circle, rgba(113, 113, 122, 0.16) 1px, transparent 1px);
+    }
+
+    .dark .bg-dot-matrix {
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+    }
+
+    /* High-contrast monochrome text selection */
+    ::selection {
+      background-color: #09090b;
+      color: #ffffff;
+    }
+
+    .dark ::selection {
+      background-color: #ffffff;
+      color: #09090b;
+    }
+
+    /* Subtle entrance animation */
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-reveal {
+      animation: revealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Clean single-page monochrome print stylesheet */
+    @media print {
+      header,
+      footer,
+      #copy-email-btn {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #09090b !important;
+      }
+      main {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body
+  id="top"
+  class="bg-paper text-zinc-900 dark:bg-void dark:text-zinc-100 font-sans antialiased transition-colors duration-300 bg-dot-matrix min-h-screen flex flex-col selection:bg-zinc-950 selection:text-white dark:selection:bg-white dark:selection:text-zinc-950"
+>
+  <!-- =========================================================
+       STICKY GLASSMORPHIC TOP NAVIGATION
+       ========================================================= -->
+  <header
+    class="sticky top-0 z-40 w-full backdrop-blur-md bg-paper/85 dark:bg-void/85 border-b border-zinc-200 dark:border-zinc-800/90 transition-colors duration-300"
+  >
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Monogram: VA / vihaancraftz -->
+      <a
+        href="#top"
+        class="inline-flex items-center gap-2.5 font-mono text-xs sm:text-sm tracking-tight group focus:outline-none"
+      >
+        <span
+          class="inline-flex items-center justify-center w-7 h-7 rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 font-semibold text-xs text-zinc-950 dark:text-white group-hover:bg-zinc-950 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-zinc-950 transition-colors"
+        >
+          VA
+        </span>
+        <span class="text-zinc-400 dark:text-zinc-600">/</span>
+        <span class="font-medium text-zinc-900 dark:text-zinc-100 group-hover:opacity-80 transition-opacity">
+          vihaancraftz
+        </span>
+      </a>
+
+      <!-- Desktop Navigation + Theme Toggle + Mobile Menu Button -->
+      <div class="flex items-center gap-2 sm:gap-6">
+        <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-6">
+          <a
+            href="#about"
+            class="text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          >
+            About
+          </a>
+          <a
+            href="#setup"
+            class="text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          >
+            Setup
+          </a>
+          <a
+            href="#ongoing"
+            class="text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          >
+            Ongoing
+          </a>
+          <a
+            href="#projects"
+            class="text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            class="text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+
+        <!-- Monochrome Light / Dark Theme Switcher -->
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch color theme"
+          title="Toggle Light / Dark Mode"
+          class="p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/90 text-zinc-700 dark:text-zinc-300 hover:border-zinc-900 dark:hover:border-zinc-500 transition-colors focus:outline-none"
+        >
+          <!-- Sun Icon (visible in dark mode) -->
+          <svg
+            class="w-4 h-4 hidden dark:block"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            ></path>
+          </svg>
+          <!-- Moon Icon (visible in light mode) -->
+          <svg
+            class="w-4 h-4 block dark:hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Menu Toggle -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open navigation menu"
+          class="md:hidden p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/90 text-zinc-700 dark:text-zinc-300 hover:border-zinc-900 dark:hover:border-zinc-500 transition-colors focus:outline-none"
+        >
+          <svg
+            id="menu-icon-open"
+            class="w-4 h-4 block"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg
+            id="menu-icon-close"
+            class="w-4 h-4 hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Responsive Mobile Navigation Drawer -->
+    <nav
+      id="mobile-nav"
+      aria-label="Mobile Navigation"
+      class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800/90 bg-paper/95 dark:bg-void/95 backdrop-blur-md px-5 py-4"
+    >
+      <div class="flex flex-col space-y-1 font-mono text-sm">
+        <a
+          href="#about"
+          class="mobile-nav-link px-3 py-2.5 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        >
+          01. About
+        </a>
+        <a
+          href="#setup"
+          class="mobile-nav-link px-3 py-2.5 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        >
+          02. Setup
+        </a>
+        <a
+          href="#ongoing"
+          class="mobile-nav-link px-3 py-2.5 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        >
+          03. Ongoing
+        </a>
+        <a
+          href="#projects"
+          class="mobile-nav-link px-3 py-2.5 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        >
+          04. Projects
+        </a>
+        <a
+          href="#contact"
+          class="mobile-nav-link px-3 py-2.5 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        >
+          05. Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-5 sm:px-8 py-16 sm:py-24 space-y-28">
+    <!-- HERO SECTION -->
+    <section id="hero" class="space-y-8 scroll-mt-28 animate-reveal">
+      <!-- Status Pill Badge -->
+      <div
+        class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface text-xs font-mono text-zinc-600 dark:text-zinc-400"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-500 dark:bg-zinc-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-zinc-950 dark:bg-white"></span>
+        </span>
+        <span>IGCSE Computer Science &bull; Building flowbrd</span>
+      </div>
+
+      <!-- Display Name & Tagline -->
+      <div class="space-y-4">
+        <h1
+          class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-zinc-950 dark:text-white"
+        >
+          Vihaan Aneja
+        </h1>
+        <p class="max-w-2xl text-base sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <span class="font-mono text-zinc-950 dark:text-zinc-100 font-medium">crafting software ⚒</span>
+          &mdash; 15-year-old Cambridge IGCSE Computer Science student exploring systems
+          programming, Linux environments, and web development.
+        </p>
+      </div>
+
+      <!-- Primary & Secondary CTAs -->
+      <div class="pt-1 flex flex-wrap items-center gap-3.5">
+        <a
+          href="#ongoing"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 font-medium text-sm hover:opacity-90 transition-opacity"
+        >
+          <span>View Ongoing</span>
+          <span class="font-mono text-xs">&darr;</span>
+        </a>
+
+        <a
+          href="#about"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-surface text-zinc-900 dark:text-zinc-100 font-medium text-sm hover:border-zinc-950 dark:hover:border-zinc-500 transition-colors"
+        >
+          <span>About Me &darr;</span>
+        </a>
+      </div>
+
+      <!-- Quick Social & Contact Links -->
+      <div class="pt-1 flex flex-wrap items-center gap-x-5 gap-y-2.5 font-mono text-xs text-zinc-600 dark:text-zinc-400">
+        <a
+          href="https://github.com/vihaancraftz"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-white transition-colors"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            ></path>
+          </svg>
+          <span>GitHub (@vihaancraftz) &nearr;</span>
+        </a>
+
+        <span class="text-zinc-300 dark:text-zinc-800">/</span>
+
+        <a
+          href="https://www.youtube.com/@ecosaviors"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-white transition-colors"
+          title="Earlier YouTube Archive Channel"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube (@ecosaviors — Archive) &nearr;</span>
+        </a>
+
+        <span class="text-zinc-300 dark:text-zinc-800">/</span>
+
+        <a
+          href="mailto:vihaananejaa@gmail.com"
+          class="inline-flex items-center gap-1.5 hover:text-zinc-950 dark:hover:text-white transition-colors"
+        >
+          <span>vihaananejaa@gmail.com</span>
+          <span>&nearr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 01. ABOUT ME SECTION -->
+    <section id="about" class="space-y-8 scroll-mt-24">
+      <div class="border-b border-zinc-200 dark:border-zinc-800 pb-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          01 // Introduction
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white mt-1">
+          About Me
+        </h2>
+      </div>
+
+      <article
+        class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface overflow-hidden transition-colors duration-200"
+      >
+        <!-- Subtle Monochrome Terminal Header -->
+        <div
+          class="px-5 sm:px-8 py-3.5 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-900/50 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full border border-zinc-400 dark:border-zinc-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full border border-zinc-400 dark:border-zinc-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-zinc-900 dark:bg-zinc-200"></span>
+            <span class="ml-2 font-mono text-xs text-zinc-500 dark:text-zinc-400">
+              ~/vihaancraftz/about.md
+            </span>
+          </div>
+          <span class="font-mono text-[11px] text-zinc-400 dark:text-zinc-500">
+            UTF-8 &bull; LF
+          </span>
+        </div>
+
+        <!-- Editorial Bio Content -->
+        <div class="p-6 sm:p-8 space-y-6">
+          <div class="space-y-4 max-w-3xl">
+            <p class="text-lg sm:text-xl font-medium leading-relaxed text-zinc-950 dark:text-white">
+              Hey there 👋 I'm Vihaan Aneja — a passionate 15-year-old Computer Science student
+              studying under the Cambridge IGCSE board, actively learning programming languages and
+              building software from the ground up.
+            </p>
+            <p class="text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+              I spend my time exploring Python, C, and HTML/CSS inside Fedora and Ubuntu Linux
+              environments, documenting my progress and lessons in public on GitHub while
+              planning collaborative developer tools.
+            </p>
+          </div>
+
+          <!-- Highlighted Learning Philosophy Callout -->
+          <blockquote
+            class="pl-4 py-2 border-l-2 border-zinc-950 dark:border-white bg-zinc-50 dark:bg-zinc-900/70 rounded-r-lg font-mono text-xs sm:text-sm text-zinc-900 dark:text-zinc-100"
+          >
+            &ldquo;Mistakes lead to success.&rdquo;
+            <span class="block sm:inline sm:ml-2 text-zinc-500 dark:text-zinc-400">
+              &mdash; Learning &amp; building in public
+            </span>
+          </blockquote>
+
+          <!-- 3 Minimal Monochrome Quick-Fact Pills -->
+          <div
+            class="pt-5 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center gap-2.5 font-mono text-xs"
+          >
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/90 text-zinc-800 dark:text-zinc-200"
+            >
+              <span class="text-zinc-400 dark:text-zinc-500">Age:</span>
+              <span class="font-medium">15</span>
+            </span>
+
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/90 text-zinc-800 dark:text-zinc-200"
+            >
+              <span class="text-zinc-400 dark:text-zinc-500">Board:</span>
+              <span class="font-medium">Cambridge IGCSE</span>
+            </span>
+
+            <span
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/90 text-zinc-800 dark:text-zinc-200"
+            >
+              <span class="text-zinc-400 dark:text-zinc-500">Focus:</span>
+              <span class="font-medium">C &middot; Python &middot; Linux</span>
+            </span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 02. HARDWARE & DEVELOPMENT SETUP SECTION -->
+    <section id="setup" class="space-y-8 scroll-mt-24">
+      <div class="border-b border-zinc-200 dark:border-zinc-800 pb-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          02 // Workstation &amp; Environment
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white mt-1">
+          Hardware &amp; Dev Setup
+        </h2>
+      </div>
+
+      <!-- Top Row: Two Prominent Hardware Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Hardware Card 1: HP 15s-fq2717TU -->
+        <article
+          class="p-6 sm:p-8 rounded-xl border border-zinc-300 dark:border-zinc-700/90 bg-white dark:bg-surface hover:border-zinc-950 dark:hover:border-zinc-400 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 font-mono text-[11px] font-semibold tracking-wider text-zinc-950 dark:text-white"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-zinc-950 dark:bg-white"></span>
+                PRIMARY DEV MACHINE
+              </span>
+              <svg
+                class="w-5 h-5 text-zinc-600 dark:text-zinc-400 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                <path d="M2 20h20"></path>
+              </svg>
+            </div>
+
+            <div class="space-y-1.5">
+              <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+                HP 15s-fq2717TU
+              </h3>
+              <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
+                Primary Dev Machine
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Dedicated daily driver for software development, Linux tinkering, and programming
+              practice.
+            </p>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 font-mono text-xs"
+          >
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Linux (Fedora &amp; Ubuntu)
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Python &amp; C
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Web Dev
+            </span>
+          </div>
+        </article>
+
+        <!-- Hardware Card 2: Dell Inspiron 11 3158 -->
+        <article
+          class="p-6 sm:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-500 dark:hover:border-zinc-500 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/70 font-mono text-[11px] font-medium tracking-wider text-zinc-700 dark:text-zinc-300"
+              >
+                SCHOOL &amp; PORTABILITY
+              </span>
+              <svg
+                class="w-5 h-5 text-zinc-500 dark:text-zinc-400 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect x="4" y="5" width="16" height="11" rx="2"></rect>
+                <path d="M2 19h20"></path>
+              </svg>
+            </div>
+
+            <div class="space-y-1.5">
+              <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+                Dell Inspiron 11 3158
+              </h3>
+              <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
+                School &amp; Coursework Machine
+              </p>
+            </div>
+
+            <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Used for Cambridge IGCSE Computer Science coursework, notes, and portable study
+              sessions.
+            </p>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap gap-2 font-mono text-xs"
+          >
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+            >
+              IGCSE Studies
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+            >
+              Notes &amp; Docs
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+            >
+              Portable Setup
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bottom Row: 4 Core Software & Workflow Bento Cards -->
+      <div id="stack" class="scroll-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Software Card 1: Operating Systems -->
+        <div
+          class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors flex flex-col justify-between gap-4"
+        >
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                Operating Systems
+              </span>
+              <svg
+                class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-zinc-950 dark:text-white">
+              Fedora &amp; Ubuntu Linux
+            </h3>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Daily Linux workflows, package management, and local development environments.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Fedora
+            </span>
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Ubuntu
+            </span>
+          </div>
+        </div>
+
+        <!-- Software Card 2: Programming Languages -->
+        <div
+          class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors flex flex-col justify-between gap-4"
+        >
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                Languages
+              </span>
+              <svg
+                class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-zinc-950 dark:text-white">
+              Python, C, HTML/CSS
+            </h3>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Systems fundamentals in C, scripting in Python, and clean web interfaces.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Python
+            </span>
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              C
+            </span>
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              HTML/CSS
+            </span>
+          </div>
+        </div>
+
+        <!-- Software Card 3: CLI & Shell Workflow -->
+        <div
+          class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors flex flex-col justify-between gap-4"
+        >
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                CLI &amp; Shell Workflow
+              </span>
+              <svg
+                class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="M6 9l3 3-3 3M11 15h6"></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-zinc-950 dark:text-white">
+              Bash / Zsh &amp; Terminal
+            </h3>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Compiling with GCC, running scripts, and navigating files from the command line.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Bash / Zsh
+            </span>
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Terminal
+            </span>
+          </div>
+        </div>
+
+        <!-- Software Card 4: Version Control -->
+        <div
+          class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors flex flex-col justify-between gap-4"
+        >
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                Version Control
+              </span>
+              <svg
+                class="w-4 h-4 text-zinc-500 dark:text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle cx="18" cy="18" r="3"></circle>
+                <circle cx="6" cy="6" r="3"></circle>
+                <path d="M6 21V9a9 9 0 0 0 9 9"></path>
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-zinc-950 dark:text-white">
+              Git &amp; GitHub
+            </h3>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Tracking commits, documenting learning logs, and publishing open repositories.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Git
+            </span>
+            <a
+              href="https://github.com/vihaancraftz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-950 dark:hover:border-zinc-500 transition-colors"
+            >
+              @vihaancraftz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. ONGOING & UPCOMING PROJECTS SECTION -->
+    <section id="ongoing" class="space-y-8 scroll-mt-24">
+      <div class="border-b border-zinc-200 dark:border-zinc-800 pb-4 space-y-1.5">
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          03 // Ongoing &amp; Upcoming
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+            Ongoing &amp; Upcoming
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
+            Projects currently in active development, architecture planning, or continuous public learning.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Ongoing Card 1: flowbrd -->
+        <article
+          class="p-6 sm:p-8 rounded-xl border border-zinc-300 dark:border-zinc-700/90 bg-white dark:bg-surface hover:border-zinc-950 dark:hover:border-zinc-400 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 font-mono text-[11px] font-semibold tracking-wider text-zinc-950 dark:text-white"
+              >
+                <span class="relative flex h-2 w-2">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-500 dark:bg-zinc-400 opacity-75"
+                  ></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-zinc-950 dark:bg-white"></span>
+                </span>
+                UPCOMING &bull; IN PLANNING
+              </span>
+              <span class="font-mono text-xs text-zinc-400 dark:text-zinc-500">
+                01 // ARCHITECTURE
+              </span>
+            </div>
+
+            <div class="space-y-2.5">
+              <h3 class="text-xl sm:text-2xl font-mono font-semibold text-zinc-950 dark:text-white">
+                flowbrd
+              </h3>
+              <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                A collaborative task and progress-tracking platform built for small developer
+                teams. Designed so developers can post new tasks, assign work to colleagues, and
+                track milestones together in one streamlined workspace.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center gap-2 font-mono text-xs"
+          >
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Team Collaboration
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Task Tracking
+            </span>
+            <span
+              class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+            >
+              Architecture Stage
+            </span>
+          </div>
+        </article>
+
+        <!-- Ongoing Card 2: learn-python -->
+        <article
+          class="group p-6 sm:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-950 dark:hover:border-zinc-400 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/90 font-mono text-[11px] font-semibold tracking-wider text-zinc-900 dark:text-zinc-100"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-zinc-950 dark:bg-white"></span>
+                ONGOING &bull; PUBLIC LOG
+              </span>
+              <a
+                href="https://github.com/vihaancraftz/learn-python"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open learn-python repository on GitHub"
+                class="text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors"
+              >
+                <svg
+                  class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17L17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="space-y-2.5">
+              <h3 class="text-xl sm:text-2xl font-mono font-semibold text-zinc-950 dark:text-white">
+                <a
+                  href="https://github.com/vihaancraftz/learn-python"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:underline underline-offset-4"
+                >
+                  learn-python
+                </a>
+              </h3>
+              <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                An open, timestamped learning log documenting what and when I learn in
+                Python&mdash;covering syntax, logic, problem-solving, and mistakes turned into
+                working code so others can follow the journey.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-2 font-mono text-xs"
+          >
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+              >
+                Python
+              </span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800"
+              >
+                Learning in Public
+              </span>
+            </div>
+            <a
+              href="https://github.com/vihaancraftz/learn-python"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-2.5 py-1 rounded bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 font-medium hover:opacity-90 transition-opacity"
+            >
+              GitHub Repo &nearr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04. SELECTED WORK / SHIPPED & REFERENCE REPOSITORIES SECTION -->
+    <section id="projects" class="space-y-8 scroll-mt-24">
+      <div class="border-b border-zinc-200 dark:border-zinc-800 pb-4 space-y-1.5">
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          04 // Selected Work
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+            Selected Work
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
+            Foundational repositories and shipped builds.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Shipped / Reference Card 1: learn-c -->
+        <article
+          class="group p-6 sm:p-7 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 font-mono text-[11px] font-medium text-zinc-700 dark:text-zinc-300"
+              >
+                PUBLIC REPO
+              </span>
+              <a
+                href="https://github.com/vihaancraftz/learn-c"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View learn-c on GitHub"
+                class="text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors"
+              >
+                <svg
+                  class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17L17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-semibold font-mono text-zinc-950 dark:text-white">
+              <a
+                href="https://github.com/vihaancraftz/learn-c"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline underline-offset-4"
+              >
+                learn-c
+              </a>
+            </h3>
+
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Structured notes, memory management exercises, and foundational C programs
+              documenting low-level programming concepts.
+            </p>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-2"
+          >
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                C
+              </span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                Systems
+              </span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                Notes
+              </span>
+            </div>
+            <a
+              href="https://github.com/vihaancraftz/learn-c"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-mono text-xs text-zinc-700 dark:text-zinc-300 hover:underline underline-offset-4"
+            >
+              Source &nearr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Shipped / Reference Card 2: Personal Portfolio -->
+        <article
+          class="group p-6 sm:p-7 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-200 flex flex-col justify-between gap-6"
+        >
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span
+                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-900 font-mono text-[11px] font-medium text-zinc-900 dark:text-zinc-100"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-zinc-950 dark:bg-white"></span>
+                LIVE
+              </span>
+              <a
+                href="https://github.com/vihaancraftz"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Personal Portfolio on GitHub"
+                class="text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors"
+              >
+                <svg
+                  class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17L17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-semibold text-zinc-950 dark:text-white">
+              <a
+                href="https://github.com/vihaancraftz"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline underline-offset-4"
+              >
+                Personal Portfolio
+              </a>
+            </h3>
+
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Minimalist monochrome developer portfolio crafted from scratch with semantic HTML,
+              responsive CSS grid layouts, and zero external framework bloat.
+            </p>
+          </div>
+
+          <div
+            class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-2"
+          >
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                HTML5
+              </span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                CSS3
+              </span>
+              <span
+                class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800"
+              >
+                Minimal UI
+              </span>
+            </div>
+            <a
+              href="https://github.com/vihaancraftz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-mono text-xs text-zinc-700 dark:text-zinc-300 hover:underline underline-offset-4"
+            >
+              GitHub &nearr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05. GET IN TOUCH / CONTACT SECTION -->
+    <section id="contact" class="space-y-8 scroll-mt-24">
+      <div class="border-b border-zinc-200 dark:border-zinc-800 pb-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          05 // Connect
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white mt-1">
+          Get In Touch
+        </h2>
+      </div>
+
+      <div
+        class="p-6 sm:p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-surface flex flex-col md:flex-row md:items-center justify-between gap-6"
+      >
+        <div class="space-y-2 max-w-xl">
+          <h3 class="text-lg sm:text-xl font-semibold text-zinc-950 dark:text-white">
+            Want to collaborate or talk about software?
+          </h3>
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Whether it's discussing Python, C programming, Linux setups, or upcoming ideas — feel
+            free to drop an email or check out my code on GitHub.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <!-- One-Click Copy Email Button -->
+          <button
+            id="copy-email-btn"
+            type="button"
+            onclick="copyEmailAddress()"
+            class="inline-flex items-center gap-2.5 px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-mono text-xs sm:text-sm hover:border-zinc-950 dark:hover:border-zinc-400 transition-colors focus:outline-none"
+          >
+            <svg
+              id="copy-icon"
+              class="w-4 h-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              viewBox="0 0 24 24"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <svg
+              id="check-icon"
+              class="w-4 h-4 shrink-0 hidden"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span id="copy-email-label">vihaananejaa@gmail.com</span>
+          </button>
+
+          <!-- Direct Mailto Link -->
+          <a
+            href="mailto:vihaananejaa@gmail.com"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            <span>Send Email</span>
+            <span>&nearr;</span>
+          </a>
+
+          <!-- GitHub Profile Link -->
+          <a
+            href="https://github.com/vihaancraftz"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile (@vihaancraftz)"
+            title="GitHub (@vihaancraftz)"
+            class="inline-flex items-center gap-2 px-3.5 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:border-zinc-950 dark:hover:border-zinc-500 font-mono text-xs transition-colors"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <!-- YouTube Archive Channel Link -->
+          <a
+            href="https://www.youtube.com/@ecosaviors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube Archive Channel (@ecosaviors)"
+            title="YouTube / @ecosaviors — earlier archive channel"
+            class="inline-flex items-center gap-2 px-3.5 py-3 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:border-zinc-950 dark:hover:border-zinc-500 font-mono text-xs transition-colors"
+          >
+            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <span>YouTube / @ecosaviors</span>
+            <span class="text-[10px] text-zinc-500 dark:text-zinc-400">(archive)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       MINIMALIST FOOTER
+       ========================================================= -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800/90 mt-12">
+    <div
+      class="max-w-5xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-500 dark:text-zinc-400"
+    >
+      <p>&copy; <span id="current-year">2026</span> Vihaan Aneja (vihaancraftz)</p>
+      <div class="flex flex-wrap items-center gap-5">
+        <a
+          href="https://github.com/vihaancraftz"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-zinc-950 dark:hover:text-white transition-colors"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.youtube.com/@ecosaviors"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-zinc-950 dark:hover:text-white transition-colors"
+        >
+          YouTube (@ecosaviors)
+        </a>
+        <a
+          href="mailto:vihaananejaa@gmail.com"
+          class="hover:text-zinc-950 dark:hover:text-white transition-colors"
+        >
+          Email
+        </a>
+        <a href="#top" class="hover:text-zinc-950 dark:hover:text-white transition-colors">
+          Top &uarr;
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       INTERACTIVE SCRIPTS (THEME, MOBILE NAV, CLIPBOARD)
+       ========================================================= -->
+  <script>
+    // Set current year dynamically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Monochrome Dark / Light Theme Persistence
+    const htmlElement = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('va-portfolio-theme');
+
+    if (savedTheme === 'light') {
+      htmlElement.classList.remove('dark');
+    } else {
+      htmlElement.classList.add('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.toggle('dark');
+      localStorage.setItem('va-portfolio-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Responsive Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMobileMenu(forceClose = false) {
+      const isCurrentlyOpen = !mobileNav.classList.contains('hidden');
+      const shouldOpen = forceClose ? false : !isCurrentlyOpen;
+
+      mobileNav.classList.toggle('hidden', !shouldOpen);
+      menuIconOpen.classList.toggle('hidden', shouldOpen);
+      menuIconClose.classList.toggle('hidden', !shouldOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', String(shouldOpen));
+    }
+
+    mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => toggleMobileMenu(true));
+    });
+
+    // One-Click Copy Email Address with Instant Visual Feedback
+    let copyResetTimeout = null;
+
+    function copyEmailAddress() {
+      const email = 'vihaananejaa@gmail.com';
+      const labelEl = document.getElementById('copy-email-label');
+      const copyIcon = document.getElementById('copy-icon');
+      const checkIcon = document.getElementById('check-icon');
+
+      const tempInput = document.createElement('textarea');
+      tempInput.value = email;
+      tempInput.setAttribute('readonly', '');
+      tempInput.style.position = 'absolute';
+      tempInput.style.left = '-9999px';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+
+      try {
+        document.execCommand('copy');
+        if (labelEl) {
+          labelEl.textContent = 'Copied to clipboard!';
+        }
+        if (copyIcon && checkIcon) {
+          copyIcon.classList.add('hidden');
+          checkIcon.classList.remove('hidden');
+        }
+
+        clearTimeout(copyResetTimeout);
+        copyResetTimeout = setTimeout(() => {
+          if (labelEl) labelEl.textContent = email;
+          if (copyIcon && checkIcon) {
+            copyIcon.classList.remove('hidden');
+            checkIcon.classList.add('hidden');
+          }
+        }, 2200);
+      } catch (err) {
+        window.location.href = `mailto:${email}`;
+      } finally {
+        document.body.removeChild(tempInput);
+      }
+    }
+  </script>
+</body>
+</html>
